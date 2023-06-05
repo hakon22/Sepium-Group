@@ -4,6 +4,7 @@
   --light: #f5f5f4;
   --white: #fff;
   --green: #94C017;
+  --light-green: #9cc91c;
   --black: #181818;
 
 }
@@ -37,7 +38,6 @@ html {
 }
 
 body {
-  width: 100%;
   background-color: var(--light);
   padding: 40px;
   border-radius: 20px;
@@ -86,6 +86,7 @@ h1 {
   grid-template-rows: repeat(2, max-content);
   overflow-x: hidden;
   margin-right: -40px;
+  column-gap: 15px;
 }
 
 a.icons {
@@ -108,6 +109,24 @@ a.icons {
   background: var(--white);
   border: 0;
   border-radius: 100px;
+  cursor: pointer;
+}
+
+.btn-nav.prev::before {
+  font-size: medium;
+  font-weight: bold;
+  content: "❮";
+}
+
+.btn-nav.next::before {
+  font-size: medium;
+  font-weight: bold;
+  content: "❯";
+}
+
+.btn-nav:hover {
+  background-color: var(--light-green);
+  color: var(--light);
 }
 
 .nav-buttons {
@@ -132,33 +151,37 @@ a.icons {
 }
 
 .img {
+  display: inline-block;
   border: 7px solid var(--white);
   border-radius: 15px;
 }
 
+.hidden {
+  display: none;
+}
+
 .first-img {
-  grid-row: span 2;
   width: 479px;
   height: 330px;
-  background: url("../images/1.jpg");
+}
+
+.row-2 {
+  grid-row: span 2;
 }
 
 .second-img {
   width: 322px;
   height: 222.31px;
-  background: url("../images/2.jpg");
 }
 
 .third-img {
   width: 322px;
   height: 222.31px;
-  background: url("../images/3.jpg");
 }
 
 .fournh-img {
   width: 322px;
   height: 222.31px;
-  background: url("../images/4.jpg");
 }
 
 .row-1 {
@@ -167,13 +190,16 @@ a.icons {
 
 .footer {
   grid-row: 2 / -1;
-  grid-column: 2 / 4;
+  grid-column: 2 / 5;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: right;
+  align-items: center;
   justify-content: end;
-  padding-bottom: 5px;
-  padding-left: 173px;
+  margin-right: 252px;
+  column-gap: 43px;
+  margin-top: 50px;
+  height: 59px;
 }
 
 .get-button {
@@ -184,13 +210,13 @@ a.icons {
   padding: 20px 25px;  
   width: 192px;
   height: 59px;
-  background: #9CC91C;
+  background: var(--light-green);
   border-radius: 15px;
+  text-decoration: none;
 }
 
 .arrow {
   color: var(--white);
-  text-decoration: none;
   display: flex;
   column-gap: 46px;
   align-items: center;
@@ -202,4 +228,10 @@ a.icons {
   border-left: 6px solid var(--white);
   border-right: none;
   content: '';
+}
+
+@media (min-width: 1410px) {
+  .footer {
+    margin-right: 181px;
+  }
 }
